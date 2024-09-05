@@ -43,6 +43,8 @@ The value after the `.` is the number of beeps that will sound when there are 'x
 To exit the setup menu just click the **Reset** button.
 
 ## Miscellaneous
-Some component sizes might seem big for some.  Especially resistors and capacitors or size 0805.  Keep in mind I am hand soldering this and I am becoming an old fart with bad eyesight.
+Some component sizes might seem big for some.  Especially resistors and capacitors of size 0805.  Keep in mind I am hand soldering this and I am becoming an old fart with bad eyesight.
 
 The microcontroller is an ATmega4808 which has way more flash storage than is needed.  I still chose this one because it is what I have and I am not going to buy a new variant for each project I do.
+
+This is not a cost effective way to get a kitchen timer.  If you need one you are better of going to the store and buying one.
