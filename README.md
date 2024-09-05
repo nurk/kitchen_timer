@@ -47,4 +47,6 @@ Some component sizes might seem big for some.  Especially resistors and capacito
 
 The microcontroller is an ATmega4808 which has way more flash storage than is needed.  I still chose this one because it is what I have and I am not going to buy a new variant for each project I do.
 
-This is not a cost effective way to get a kitchen timer.  If you need one you are better of going to the store and buying one.
+The battery charge controller I chose only charges at 500mA.  So you will need a battery with at least this capacity (or you have to change the resistor on the programming pin).  I have a 2000mA battery connected and I takes a fair while to charge.
+
+**This is not a cost effective way to get a kitchen timer.  If you need one you are better of going to the store and buying one.**
