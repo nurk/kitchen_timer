@@ -1,0 +1,330 @@
+(footprint "SW_Slide_SPDT_MINI"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "miniature slide switch, OS series, SPDT, https://www.amazon.nl/-/en/gp/product/B09TVFF6KW/ref=sw_img_1?smid=AT0FJ7CZCB0G9&psc=1")
+	(tags "switch SPDT")
+	(property "Reference" "REF**"
+		(at 0 -2.99 0)
+		(layer "F.SilkS")
+		(uuid "61c85a0e-23d6-4e45-af94-7e0f4cbfd958")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "VOLUME"
+		(at 0 3 0)
+		(layer "F.Fab")
+		(uuid "690cd7ed-fba8-4cc3-8bd7-4320f91e9d9f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" "01_my_library:SW_Slide_SPDT_MINI"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "74866255-0ed4-40cf-8dda-9ae69ab0ee18")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c0821601-f524-4b9e-9158-569229f54495")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Switch, single pole double throw"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "68782101-f33f-4be3-915f-0a1eeb451f03")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Loud" "Loud"
+		(at 2.135 -2.155 -90)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "a7b82022-da3c-4224-9915-b20855b0b533")
+		(effects
+			(font
+				(size 1.25 1.25)
+				(thickness 0.3)
+				(bold yes)
+			)
+			(justify right)
+		)
+	)
+	(property "Quiet" "Quiet"
+		(at -2.14 -2.18 -90)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "bbd16b33-2b1f-4bbb-8a21-ac546ae21f84")
+		(effects
+			(font
+				(size 1.25 1.25)
+				(thickness 0.3)
+				(bold yes)
+			)
+			(justify right)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start -4.35 -1.85)
+		(end -4.35 -0.85)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "80fed79c-c152-4890-8e16-268e2126e9fa")
+	)
+	(fp_line
+		(start -4.35 -1.85)
+		(end 4.35 -1.85)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "407d25b3-3095-4e3b-8b17-e98da5365a80")
+	)
+	(fp_line
+		(start -4.35 0.85)
+		(end -4.35 1.85)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "de0cabaa-f95a-460f-b578-6c611aa01801")
+	)
+	(fp_line
+		(start -4.35 1.85)
+		(end 4.35 1.85)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "33b23cdd-bbdc-4e47-816f-573530ad07ac")
+	)
+	(fp_line
+		(start 4.35 -1.85)
+		(end 4.35 -0.85)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "e98eded4-39f1-4e08-9592-d494ec72af28")
+	)
+	(fp_line
+		(start 4.35 0.85)
+		(end 4.35 1.85)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "599ca571-7b77-4783-bd18-79752b814d8f")
+	)
+	(fp_rect
+		(start -4.6 -2.1)
+		(end 4.6 2.1)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill none)
+		(layer "F.CrtYd")
+		(uuid "9e9365be-1365-479d-b3a5-2cb45442ab4b")
+	)
+	(fp_line
+		(start -2 -1)
+		(end -2 1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "7daec482-4bcf-4b1c-92bc-f233f5a3f902")
+	)
+	(fp_line
+		(start -2 -1)
+		(end 2 -1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "66b602fb-03df-4b20-bd3b-b8576c8c2e2b")
+	)
+	(fp_line
+		(start -2 1)
+		(end 2 1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "e2070fc3-8be6-47f8-bd53-d620ff7e533c")
+	)
+	(fp_line
+		(start -1.34 -1)
+		(end -1.34 1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "8b553244-0228-4982-a0a9-a6afba4370a2")
+	)
+	(fp_line
+		(start -0.66 -1)
+		(end -0.66 1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "02deacdd-fe5a-44cb-89da-7bcbafd78942")
+	)
+	(fp_line
+		(start 0 -1)
+		(end 0 1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "a55d30b4-c9b7-463a-a52b-3e2573c540e6")
+	)
+	(fp_line
+		(start 2 -1)
+		(end 2 1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "ce2aba52-524b-42c3-8d20-ab8cb0bb6463")
+	)
+	(fp_text user "https://www.amazon.nl/-/en/gp/product/B09TVFF6KW/ref=sw_img_1?smid=AT0FJ7CZCB0G9&psc=1"
+		(at -2 -5.6 0)
+		(layer "Cmts.User")
+		(hide yes)
+		(uuid "07deae0a-c449-4b2e-992f-d5e4119a327e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 -3.048 0)
+		(layer "F.Fab")
+		(uuid "e76c4991-fbc0-42b2-aa66-a1f2bcc96487")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole rect
+		(at -2.54 0)
+		(size 1.6 1.6)
+		(drill 0.8)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curve_points 5)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "66d6039a-f69d-40b5-827b-6d28b7598fef")
+	)
+	(pad "2" thru_hole oval
+		(at 0 0)
+		(size 1.6 1.6)
+		(drill 0.8)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curve_points 5)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "890b0511-d4a3-4fea-bf2b-e0b8c06c9268")
+	)
+	(pad "3" thru_hole oval
+		(at 2.54 0)
+		(size 1.6 1.6)
+		(drill 0.8)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curve_points 5)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "66ad3820-538b-45b6-82ca-bcecc650b500")
+	)
+	(model "${KICAD8_3DMODEL_DIR}/Button_Switch_THT.3dshapes/SW_CK_JS202011CQN_DPDT_Straight.step"
+		(offset
+			(xyz -2.5 1.5 0)
+		)
+		(scale
+			(xyz 0.9 0.9 0.9)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
