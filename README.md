@@ -32,11 +32,12 @@ After setting a time you can long press the **Reset** button until you hear a se
 ### Start/Stop long press
 When you long press the **Start/Stop** the letter `A` will appear and you will have entered the setup menu.  After releasing the **Start/Stop** button you will see `A5. 0`.  Clicking the **Start/Stop** button will cycle through the menu items:  
 | Displayed        | Meaning         |
-| ---------------- | --------------- |
+| :--------------: | :-------------: |
 | `A5. 0`            | 5 minute alarm  |
 | `A10.0`            | 10 minute alarm |
 | `A15.0`            | 15 minute alarm |
 | `A20.0`            | 20 minute alarm |
+
 The value after the `.` is the number of beeps that will sound when there are 'x' minutes left.  You can use the **Minutes** button to increase the number of beeps and the **Seconds** button to decrease the number of beeps.
 
 To exit the setup menu just click the **Reset** button.
