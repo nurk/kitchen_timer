@@ -30,7 +30,7 @@ Because you can fully turn off this device a way was needed to set the time for 
 After setting a time you can long press the **Reset** button until you hear a second beep and the set time will be stored.  When cycling the power the stored time will be loaded.
 
 ### Start/Stop long press
-When you long press the **Start/Stop** the letter `A` will appear and you will have entered the setup menu.  After releasing the **Start/Stop** button you will see `A5. 0`.  Clicking the **Start/Stop** button will cycle through the menu items:  
+When you long press the **Start/Stop** button the letter `A` will appear and you will have entered the setup menu.  After releasing the **Start/Stop** button you will see `A5. 0`.  Clicking the **Start/Stop** button will cycle through the menu items:  
 | Displayed        | Meaning         |
 | :--------------: | :-------------: |
 | `A5. 0`            | 5 minute alarm  |
