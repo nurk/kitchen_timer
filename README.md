@@ -11,7 +11,7 @@ This repository contains the version(s) that I deem worthy of the internet.
 
 You will find a software and hardware folder with each containing the respective versions.
 
-The hardware folder contains a KiCaD project where the symbols and footprints used have add to a local library.  You will also find a pdf of the [schematic](https://github.com/nurk/kitchen_timer/blob/ce0c0dc44edd9d53a935f777b976885855d0056c/hardware/kitchen_timer_6.3/schematic.pdf), a screenshot of the [pcb](https://github.com/nurk/kitchen_timer/blob/ce0c0dc44edd9d53a935f777b976885855d0056c/hardware/kitchen_timer_6.3/pcb.png) and a screenshot of the [3D rendering](https://github.com/nurk/kitchen_timer/blob/ce0c0dc44edd9d53a935f777b976885855d0056c/hardware/kitchen_timer_6.3/3D.png).
+The hardware folder contains a KiCaD project where the symbols and footprints used have been added to a local library.  You will also find a pdf of the [schematic](https://github.com/nurk/kitchen_timer/blob/ce0c0dc44edd9d53a935f777b976885855d0056c/hardware/kitchen_timer_6.3/schematic.pdf), a screenshot of the [pcb](https://github.com/nurk/kitchen_timer/blob/ce0c0dc44edd9d53a935f777b976885855d0056c/hardware/kitchen_timer_6.3/pcb.png) and a screenshot of the [3D rendering](https://github.com/nurk/kitchen_timer/blob/ce0c0dc44edd9d53a935f777b976885855d0056c/hardware/kitchen_timer_6.3/3D.png).
 
 The software folder contains an arduino ide project with the, well, software.
 
@@ -22,12 +22,12 @@ I am not going to explain how to use a kitchen timer.  If the main function of t
 This switch toggles the display to show the timer and the measured temperature.
 
 ### Loud / Quiet
-I bought cheap buzzers on amazon and they all seem a bit different.  Some are quiet some are loud.  Because I was tired of changing the inline resistor for the buzzer I added a toggle to switch between two values.  One a louder, the other is quieter.
+I bought cheap buzzers on amazon and they all seem a bit different.  Some are quiet and some are loud.  Because I was tired of changing the inline resistor for the buzzer I added a toggle to switch between two values.  One is louder, the other is quieter.
 
 ### Reset long press
 Because you can fully turn off this device a way was needed to set the time for when you turn on the device.  The chance of you needing a timer of 0 minutes and 0 seconds is very slim.
 
-After setting a time you can long press the **Reset** button until you hear a second beep and the set time will store.  When cycling the power the stored time will be loaded.
+After setting a time you can long press the **Reset** button until you hear a second beep and the set time will be stored.  When cycling the power the stored time will be loaded.
 
 ### Start/Stop long press
 When you long press the **Start/Stop** the letter `A` will appear and you will have entered the setup menu.  After releasing the **Start/Stop** button you will see `A5. 0`.  Clicking the **Start/Stop** button will cycle through the menu items:  
