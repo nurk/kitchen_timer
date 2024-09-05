@@ -17,9 +17,9 @@ void multiplexDigits() {
     switch (digits[currentDigit]) {
       case DIGIT_1:
         if (setupMenu) {
-          writeNumber(aDigit, false);
+          writeDigit(aDigit, false);
         } else {
-          writeNumber(numbers[left / 10], false);
+          writeDigit(numbers[left / 10], false);
         }
         break;
       case DIGIT_2:
@@ -27,19 +27,19 @@ void multiplexDigits() {
           if (setupMenu) {
             switch (menuItem) {
               case -1:
-                writeNumber(blankDigit, false);
+                writeDigit(blankDigit, false);
                 break;
               case 0:
-                writeNumber(numbers[5], true);
+                writeDigit(numbers[5], true);
                 break;
               case 1:
-                writeNumber(numbers[1], false);
+                writeDigit(numbers[1], false);
                 break;
               case 2:
-                writeNumber(numbers[1], false);
+                writeDigit(numbers[1], false);
                 break;
               case 3:
-                writeNumber(numbers[2], false);
+                writeDigit(numbers[2], false);
                 break;
             }
           } else {
@@ -49,7 +49,7 @@ void multiplexDigits() {
                 withDp = false;
               }
             }
-            writeNumber(numbers[left % 10], withDp);
+            writeDigit(numbers[left % 10], withDp);
           }
           break;
         }
@@ -57,46 +57,46 @@ void multiplexDigits() {
         if (setupMenu) {
           switch (menuItem) {
             case -1:
-                writeNumber(blankDigit, false);
-                break;
+              writeDigit(blankDigit, false);
+              break;
             case 0:
-              writeNumber(blankDigit, false);
+              writeDigit(blankDigit, false);
               break;
             case 1:
-              writeNumber(numbers[0], true);
+              writeDigit(numbers[0], true);
               break;
             case 2:
-              writeNumber(numbers[5], true);
+              writeDigit(numbers[5], true);
               break;
             case 3:
-              writeNumber(numbers[0], true);
+              writeDigit(numbers[0], true);
               break;
           }
         } else {
-          writeNumber(numbers[right / 10], false);
+          writeDigit(numbers[right / 10], false);
         }
         break;
       case DIGIT_4:
         if (setupMenu) {
           switch (menuItem) {
             case -1:
-                writeNumber(blankDigit, false);
-                break;
-              case 0:
-              writeNumber(numbers[alarm5MinutesBleeps], false);
+              writeDigit(blankDigit, false);
+              break;
+            case 0:
+              writeDigit(numbers[alarm5MinutesBleeps], false);
               break;
             case 1:
-              writeNumber(numbers[alarm10MinutesBleeps], false);
+              writeDigit(numbers[alarm10MinutesBleeps], false);
               break;
             case 2:
-              writeNumber(numbers[alarm15MinutesBleeps], false);
+              writeDigit(numbers[alarm15MinutesBleeps], false);
               break;
             case 3:
-              writeNumber(numbers[alarm20MinutesBleeps], false);
+              writeDigit(numbers[alarm20MinutesBleeps], false);
               break;
           }
         } else {
-          writeNumber(numbers[right % 10], false);
+          writeDigit(numbers[right % 10], false);
         }
         break;
     }
@@ -106,7 +106,7 @@ void multiplexDigits() {
   }
 }
 
-void writeNumber(byte number, boolean withDp) {
+void writeDigit(byte number, boolean withDp) {
   for (int i = 0, mask = 1; i < 8; i++, mask = mask << 1) {
     if (number & mask) {
       digitalWrite(segments[i], HIGH);

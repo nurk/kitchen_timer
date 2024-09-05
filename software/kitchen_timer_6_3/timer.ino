@@ -21,14 +21,16 @@ void timerHandler() {
 }
 
 void handleIntermediateAlarms() {
-  if (counting && !pauzed && minutes == 20 && seconds == 0) {
-    bleepBlocksToDo = alarm20MinutesBleeps;
-  } else if (counting && !pauzed && minutes == 15 && seconds == 0) {
-    bleepBlocksToDo = alarm15MinutesBleeps;
-  } else if (counting && !pauzed && minutes == 10 && seconds == 0) {
-    bleepBlocksToDo = alarm10MinutesBleeps;
-  } else if (counting && !pauzed && minutes == 5 && seconds == 0) {
-    bleepBlocksToDo = alarm5MinutesBleeps;
+  if (counting && !pauzed && seconds == 0) {
+    if (minutes == 20) {
+      bleepBlocksToDo = alarm20MinutesBleeps;
+    } else if (minutes == 15) {
+      bleepBlocksToDo = alarm15MinutesBleeps;
+    } else if (minutes == 10) {
+      bleepBlocksToDo = alarm10MinutesBleeps;
+    } else if (minutes == 5) {
+      bleepBlocksToDo = alarm5MinutesBleeps;
+    }
   }
 }
 
