@@ -1,12 +1,14 @@
-const int NUMBER_OF_BATTERY_SAMPLES = 5;
+const int NUMBER_OF_BATTERY_SAMPLES = 100;
 
 int batterySamples[NUMBER_OF_BATTERY_SAMPLES];
 int batteryIndex = 0;
 
+HystFilter batteryPercentageHysteresisFilter(100, 100, 3);
+
 void handleBatteryLevel() {
   if (millis() > nextBatteryLevelCheck) {
     checkBatteryLevel();
-    nextBatteryLevelCheck = millis() + 976;
+    nextBatteryLevelCheck = millis() + 10;
   }
 }
 
@@ -29,18 +31,22 @@ void checkBatteryLevel() {
 void setBatteryIndicator(float value) {
   float voltage = value * 5.0 / 1023;
   float percentage = mapf(voltage, 3.0, 4.2, 0, 100);
+  int hysteresis = batteryPercentageHysteresisFilter.getOutputLevel(percentage);
 
   Serial.print("voltage:");
   Serial.print(voltage);
   Serial.print(",percentage:");
-  Serial.println(percentage);
+  Serial.print(percentage);
+  Serial.print(",hyst:");
+  Serial.println(hysteresis);
 
-  if (percentage > 75) {
+
+  if (hysteresis > 75) {
     pixels.setPixelColor(0, pixels.Color(0, 255, 0));
-  } else if (percentage > 50) {
+  } else if (hysteresis > 50) {
     pixels.setPixelColor(0, pixels.Color(255, 255, 0));
-  } else if (percentage > 25) {
-    pixels.setPixelColor(0, pixels.Color(255, 140, 0));
+  } else if (hysteresis > 25) {
+    pixels.setPixelColor(0, pixels.Color(255, 100, 0));
   } else {
     pixels.setPixelColor(0, pixels.Color(255, 0, 0));
   }

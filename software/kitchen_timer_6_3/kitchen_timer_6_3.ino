@@ -11,6 +11,7 @@
 #define Serial \
   if (DEBUG) Serial
 
+#include "HystFilter.h"
 #include <JC_Button.h>
 #include <EEPROM.h>
 #include <Adafruit_NeoPixel.h>
