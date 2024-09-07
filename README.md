@@ -11,7 +11,7 @@ This repository contains the version(s) that I deem worthy of the internet.
 
 You will find a software and hardware folder with each containing the respective versions.
 
-The hardware folder contains a KiCaD project where the symbols and footprints used have been added to a local library.  You will also find a pdf of the [schematic](https://github.com/nurk/kitchen_timer/blob/ce0c0dc44edd9d53a935f777b976885855d0056c/hardware/kitchen_timer_6.3/schematic.pdf), a screenshot of the [pcb](https://github.com/nurk/kitchen_timer/blob/ce0c0dc44edd9d53a935f777b976885855d0056c/hardware/kitchen_timer_6.3/pcb.png) and a screenshot of the [3D rendering](https://github.com/nurk/kitchen_timer/blob/ce0c0dc44edd9d53a935f777b976885855d0056c/hardware/kitchen_timer_6.3/3D.png).
+The hardware folder contains a KiCad project where the symbols and footprints used have been added to a local library.  You will also find a pdf of the [schematic](https://github.com/nurk/kitchen_timer/blob/ce0c0dc44edd9d53a935f777b976885855d0056c/hardware/kitchen_timer_6.3/schematic.pdf), a screenshot of the [pcb](https://github.com/nurk/kitchen_timer/blob/ce0c0dc44edd9d53a935f777b976885855d0056c/hardware/kitchen_timer_6.3/pcb.png) and a screenshot of the [3D rendering](https://github.com/nurk/kitchen_timer/blob/ce0c0dc44edd9d53a935f777b976885855d0056c/hardware/kitchen_timer_6.3/3D.png).
 
 The software folder contains an arduino ide project with the, well, software.
 
