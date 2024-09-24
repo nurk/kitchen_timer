@@ -1,6 +1,6 @@
 /**
-  SW: 6.3
-  HW: 6.3
+  SW: 6.4
+  HW: 6.4
 
   ATmega4808
   Internal 16 MHz
@@ -44,11 +44,11 @@
 
 #define BUZZER PIN_PA6
 
-#define BATTERY_LEVEL_PIN PIN_PF2 // needs bodge wire from pf0 to pf2. pf0 cannot do analog read
+#define BATTERY_LEVEL_PIN PIN_PF2
 #define BATTERY_LEVEL_LED_PIN PIN_PD7
 
 #define TEMP_V PIN_PF4
-#define TEMP_GND PIN_PF1
+#define TEMP_GND PIN_PF3
 #define FUNCTION PIN_PF5
 
 const int segments[] = { A_SEGMENT, B_SEGMENT, C_SEGMENT, D_SEGMENT, E_SEGMENT, F_SEGMENT, G_SEGMENT, DP_SEGMENT };
