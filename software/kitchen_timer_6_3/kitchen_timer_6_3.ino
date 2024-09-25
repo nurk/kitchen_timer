@@ -10,7 +10,7 @@
   Serial UPDI
 **/
 
-#define DEBUG true
+#define DEBUG false
 #define Serial \
   if (DEBUG) Serial
 

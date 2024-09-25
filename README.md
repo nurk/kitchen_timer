@@ -37,8 +37,11 @@ When you long press the **Start/Stop** button the letter `A` will appear and you
 | `A10.0`          | 10 minute alarm |
 | `A15.0`          | 15 minute alarm |
 | `A20.0`          | 20 minute alarm |
+| `C 0.0`          | Temperature offset<sup>*</sup> |
 
-The value after the `.` is the number of beeps that will sound when there are 'x' minutes left.  You can use the **Minutes** button to increase the number of beeps and the **Seconds** button to decrease the number of beeps.
+<sup>*</sup> This was added in version 6.4.  It is a `C` because I cannot make a `T` with a 7-segment display.
+
+For the alarms, the value after the `.` is the number of beeps that will sound when there are 'x' minutes left.  You can use the **Minutes** button to increase the number of beeps and the **Seconds** button to decrease the number of beeps.
 
 To exit the setup menu just click the **Reset** button.
 

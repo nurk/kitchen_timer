@@ -7,9 +7,9 @@ https://www.circuitbasics.com/arduino-thermistor-temperature-sensor-tutorial/
 const int NOMINAL_RESISTANCE = 10000;
 const int SERIAL_RESISTANCE = 10000;
 const int BETA_COEFFICIENT = 3435;
-const int ADC_RESOLUTION = 1023;
+const int ADC_RESOLUTION = 1024;
 const int TEMPERATURE_NOMINAL = 25;
-const int NUMBER_OF_TEMPERATURE_SAMPLES = 10;
+const int NUMBER_OF_TEMPERATURE_SAMPLES = 4;
 
 int temperatureSamples[NUMBER_OF_TEMPERATURE_SAMPLES];
 int temperatureIndex = 0;
@@ -17,12 +17,11 @@ int temperatureIndex = 0;
 void handleTemperature() {
   if (millis() > nextTemperatureCheck) {
     checkTemperature();
-    nextTemperatureCheck = millis() + 977;
+    nextTemperatureCheck = millis() + 500;
   }
 }
 
 void checkTemperature() {
-  Serial.println(analogRead(TEMP_V));
   digitalWrite(TEMP_GND, LOW);
   temperatureSamples[temperatureIndex] = analogRead(TEMP_V);
   digitalWrite(TEMP_GND, HIGH);
@@ -52,13 +51,13 @@ void convertThermistorReading(float thermistorReading) {
   Serial.println(thermistorResistance);
 
   float steinhart;
-  steinhart = thermistorResistance / NOMINAL_RESISTANCE;  // (R/Ro)
-  steinhart = log(steinhart);                             // ln(R/Ro)
-  steinhart /= BETA_COEFFICIENT;                          // 1/B * ln(R/Ro)
-  steinhart += 1.0 / (TEMPERATURE_NOMINAL + 273.15);      // + (1/To)
-  steinhart = 1.0 / steinhart;                            // Invert
-  steinhart -= 273.15;                                    // convert to C
-  steinhart *= 100;                                       // make in 10ths of degrees
+  steinhart = thermistorResistance / NOMINAL_RESISTANCE;      // (R/Ro)
+  steinhart = log(steinhart);                                 // ln(R/Ro)
+  steinhart /= BETA_COEFFICIENT;  // 1/B * ln(R/Ro)
+  steinhart += 1.0 / (TEMPERATURE_NOMINAL + 273.15);          // + (1/To)
+  steinhart = 1.0 / steinhart;                                // Invert
+  steinhart -= 273.15;                                        // convert to C
+  steinhart *= 100;                                           // make in 10ths of degrees
 
   Serial.print("Temperature ");
   Serial.print(steinhart);

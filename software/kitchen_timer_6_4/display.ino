@@ -17,7 +17,11 @@ void multiplexDigits() {
     switch (digits[currentDigit]) {
       case DIGIT_1:
         if (setupMenu) {
-          writeDigit(aDigit, false);
+          if (menuItem != 4) {
+            writeDigit(aDigit, false);
+          } else {
+            writeDigit(cDigit, false);
+          }
         } else {
           writeDigit(numbers[left / 10], false);
         }
@@ -40,6 +44,13 @@ void multiplexDigits() {
                 break;
               case 3:
                 writeDigit(numbers[2], false);
+                break;
+              case 4:
+                if (tempOffset < -0.01) {
+                  writeDigit(minusDigit, false);
+                } else {
+                  writeDigit(blankDigit, false);
+                }
                 break;
             }
           } else {
@@ -71,6 +82,9 @@ void multiplexDigits() {
             case 3:
               writeDigit(numbers[0], true);
               break;
+            case 4:
+              writeDigit(numbers[static_cast<int>((fabs(tempOffset) * 10) / 10)], true);
+              break;
           }
         } else {
           writeDigit(numbers[right / 10], false);
@@ -93,6 +107,9 @@ void multiplexDigits() {
               break;
             case 3:
               writeDigit(numbers[alarm20MinutesBleeps], false);
+              break;
+            case 4:
+              writeDigit(numbers[static_cast<int>(round(fabs(tempOffset) * 10)) % 10], false);
               break;
           }
         } else {

@@ -19,7 +19,7 @@ void handleStarStoptButton() {
   }
   if (startStopButton.wasReleased()) {
     if (setupMenu) {
-      menuItem = (menuItem + 1) % 4;
+      menuItem = (menuItem + 1) % 5;
     } else {
       if (buzzing) {
         resetBuzzing();
@@ -141,6 +141,10 @@ void alarmUp() {
       alarm20MinutesBleeps = min(9, alarm20MinutesBleeps + 1);
       EEPROM.put(alarm20MinutesAddress, alarm20MinutesBleeps);
       break;
+    case 4:
+      tempOffset = fmin(9.9, tempOffset + 0.1);
+      EEPROM.put(tempOffsetAddress, tempOffset);
+      break;
   }
 }
 
@@ -161,6 +165,10 @@ void alarmDown() {
     case 3:
       alarm20MinutesBleeps = max(0, alarm20MinutesBleeps - 1);
       EEPROM.put(alarm20MinutesAddress, alarm20MinutesBleeps);
+      break;
+    case 4:
+      tempOffset = fmax(-9.9, tempOffset - 0.1);
+      EEPROM.put(tempOffsetAddress, tempOffset);
       break;
   }
 }

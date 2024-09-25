@@ -7,9 +7,9 @@ https://www.circuitbasics.com/arduino-thermistor-temperature-sensor-tutorial/
 const int NOMINAL_RESISTANCE = 10000;
 const int SERIAL_RESISTANCE = 10000;
 const int BETA_COEFFICIENT = 3435;
-const int ADC_RESOLUTION = 1023;
+const int ADC_RESOLUTION = 1024;
 const int TEMPERATURE_NOMINAL = 25;
-const int NUMBER_OF_TEMPERATURE_SAMPLES = 10;
+const int NUMBER_OF_TEMPERATURE_SAMPLES = 4;
 
 int temperatureSamples[NUMBER_OF_TEMPERATURE_SAMPLES];
 int temperatureIndex = 0;
@@ -17,12 +17,11 @@ int temperatureIndex = 0;
 void handleTemperature() {
   if (millis() > nextTemperatureCheck) {
     checkTemperature();
-    nextTemperatureCheck = millis() + 977;
+    nextTemperatureCheck = millis() + 500;
   }
 }
 
 void checkTemperature() {
-  Serial.println(analogRead(TEMP_V));
   digitalWrite(TEMP_GND, LOW);
   temperatureSamples[temperatureIndex] = analogRead(TEMP_V);
   digitalWrite(TEMP_GND, HIGH);
@@ -41,15 +40,15 @@ void checkTemperature() {
 }
 
 void convertThermistorReading(float thermistorReading) {
-  Serial.print("Thermistor reading ");
-  Serial.println(thermistorReading);
+  // Serial.print("Thermistor reading ");
+  // Serial.println(thermistorReading);
 
   // convert the value to resistance
   float thermistorResistance = ADC_RESOLUTION / thermistorReading - 1;
   thermistorResistance = SERIAL_RESISTANCE * thermistorResistance;
 
-  Serial.print("Thermistor resistance ");
-  Serial.println(thermistorResistance);
+  // Serial.print("Thermistor resistance ");
+  // Serial.println(thermistorResistance);
 
   float steinhart;
   steinhart = thermistorResistance / NOMINAL_RESISTANCE;  // (R/Ro)
@@ -63,6 +62,8 @@ void convertThermistorReading(float thermistorReading) {
   Serial.print("Temperature ");
   Serial.print(steinhart);
   Serial.println(" 10ths of degrees C°");
+
+  steinhart = steinhart + (tempOffset * 100);
 
   int steinhartInt = static_cast<int>(round(steinhart));
 

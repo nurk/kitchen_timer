@@ -10,7 +10,7 @@
   Serial UPDI
 **/
 
-#define DEBUG true
+#define DEBUG false
 #define Serial \
   if (DEBUG) Serial
 
@@ -48,7 +48,8 @@
 #define BATTERY_LEVEL_LED_PIN PIN_PD7
 
 #define TEMP_V PIN_PF4
-#define TEMP_GND PIN_PF3
+// #define TEMP_GND PIN_PF1  // v6.3
+#define TEMP_GND PIN_PF3  // v6.4
 #define FUNCTION PIN_PF5
 
 const int segments[] = { A_SEGMENT, B_SEGMENT, C_SEGMENT, D_SEGMENT, E_SEGMENT, F_SEGMENT, G_SEGMENT, DP_SEGMENT };
@@ -69,6 +70,8 @@ const byte numbers[] = {
 };
 const byte blankDigit = 0X00;
 const byte aDigit = 0X77;
+const byte cDigit = 0X39;
+const byte minusDigit = 0X40;
 
 int currentDigit = 0;
 unsigned long digitMillis = millis();
@@ -117,7 +120,6 @@ const int alarm10MinutesAddress = 6;
 const int alarm15MinutesAddress = 8;
 const int alarm20MinutesAddress = 10;
 
-
 Adafruit_NeoPixel pixels(1, BATTERY_LEVEL_LED_PIN, NEO_GRB + NEO_KHZ800);
 unsigned long nextBatteryLevelCheck = 0;
 
@@ -127,6 +129,8 @@ boolean isTimerDisplayed = true;
 unsigned long nextTemperatureCheck = millis();
 int tempMostSignificant = 0;
 int tempLeastSignificant = 0;
+float tempOffset = 0.0;
+const int tempOffsetAddress = 12;  // 4 bytes
 
 void setup() {
   Serial.swap(1);
@@ -204,4 +208,7 @@ void loadEEPROM() {
   alarm10MinutesBleeps = min(9, max(0, alarm10MinutesBleeps));
   alarm15MinutesBleeps = min(9, max(0, alarm15MinutesBleeps));
   alarm20MinutesBleeps = min(9, max(0, alarm20MinutesBleeps));
+
+  EEPROM.get(tempOffsetAddress, tempOffset);
+  tempOffset = fmin(9.9, fmax(-9.9, tempOffset));
 }
