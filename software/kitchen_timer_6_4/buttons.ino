@@ -58,8 +58,8 @@ void handleTimeResetButton() {
   }
   if (timeResetButton.wasReleased()) {
     if (resetLongPressed) {
-      EEPROM.put(eepromMinutesAddress, previousMinutes);
-      EEPROM.put(eepromSecondsAddress, previousSeconds);
+      EEPROM.put(minutesAddress, previousMinutes);
+      EEPROM.put(secondsAddress, previousSeconds);
     } else if (setupMenu) {
       setupMenu = false;
     } else {
@@ -97,7 +97,7 @@ void handleTimeButtons() {
     case MINUTES_UP:
       buttonTone();
       if (setupMenu) {
-        alarmUp();
+        menuUp();
       } else {
         minutes++;
         if (minutes > 99) {
@@ -110,7 +110,7 @@ void handleTimeButtons() {
     case SECONDS_UP:
       buttonTone();
       if (setupMenu) {
-        alarmDown();
+        menuDown();
       } else {
         seconds++;
         if (seconds > 59) {
@@ -123,7 +123,7 @@ void handleTimeButtons() {
   }
 }
 
-void alarmUp() {
+void menuUp() {
   switch (menuItem) {
     case 0:
       alarm5MinutesBleeps = min(9, alarm5MinutesBleeps + 1);
@@ -148,7 +148,7 @@ void alarmUp() {
   }
 }
 
-void alarmDown() {
+void menuDown() {
   switch (menuItem) {
     case 0:
       alarm5MinutesBleeps = max(0, alarm5MinutesBleeps - 1);

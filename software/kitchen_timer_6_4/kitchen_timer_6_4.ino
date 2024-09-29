@@ -48,8 +48,8 @@
 #define BATTERY_LEVEL_LED_PIN PIN_PD7
 
 #define TEMP_V PIN_PF4
-// #define TEMP_GND PIN_PF1  // v6.3
-#define TEMP_GND PIN_PF3  // v6.4
+#define TEMP_GND PIN_PF1  // v6.3
+// #define TEMP_GND PIN_PF3  // v6.4
 #define FUNCTION PIN_PF5
 
 const int segments[] = { A_SEGMENT, B_SEGMENT, C_SEGMENT, D_SEGMENT, E_SEGMENT, F_SEGMENT, G_SEGMENT, DP_SEGMENT };
@@ -95,8 +95,8 @@ int seconds = 0;
 int minutes = 0;
 int previousSeconds = 0;
 int previousMinutes = 0;
-const int eepromMinutesAddress = 0;
-const int eepromSecondsAddress = 2;
+const int minutesAddress = 0;
+const int secondsAddress = 2;
 bool counting = false;
 bool buzzing = false;
 bool pauzed = false;
@@ -154,15 +154,6 @@ void setup() {
   pinMode(FUNCTION, INPUT_PULLUP);
   pinMode(TEMP_GND, OUTPUT);
 
-  pixels.begin();
-  pixels.setBrightness(10);
-  pixels.setPixelColor(0, pixels.Color(255, 255, 255));
-  pixels.show();
-
-  digitalWrite(TEMP_GND, LOW);
-  convertThermistorReading(analogRead(TEMP_V));
-  digitalWrite(TEMP_GND, HIGH);
-
   isTimerDisplayed = digitalRead(FUNCTION) == HIGH;
 
   startStopButton.begin();
@@ -174,6 +165,15 @@ void setup() {
   ITimer0.attachInterruptInterval(TIMER_INTERVAL_MS, timerHandler);
 
   loadEEPROM();
+
+  pixels.begin();
+  pixels.setBrightness(10);
+  pixels.setPixelColor(0, pixels.Color(255, 255, 255));
+  pixels.show();
+
+  digitalWrite(TEMP_GND, LOW);
+  convertThermistorReading(analogRead(TEMP_V));
+  digitalWrite(TEMP_GND, HIGH);
 }
 
 void loop() {
@@ -186,29 +186,23 @@ void loop() {
 }
 
 void loadEEPROM() {
-  int eepromSeconds = 0;
-  int eepromMinutes = 0;
-  EEPROM.get(eepromSecondsAddress, eepromSeconds);
-  EEPROM.get(eepromMinutesAddress, eepromMinutes);
+  EEPROM.get(secondsAddress, seconds);
+  EEPROM.get(minutesAddress, minutes);
   EEPROM.get(alarm5MinutesAddress, alarm5MinutesBleeps);
   EEPROM.get(alarm10MinutesAddress, alarm10MinutesBleeps);
   EEPROM.get(alarm15MinutesAddress, alarm15MinutesBleeps);
   EEPROM.get(alarm20MinutesAddress, alarm20MinutesBleeps);
+  EEPROM.get(tempOffsetAddress, tempOffset);
 
-  if (eepromSeconds <= 59 && eepromSeconds >= 0) {
-    seconds = eepromSeconds;
-    previousSeconds = eepromSeconds;
-  }
-  if (eepromMinutes <= 99 && eepromMinutes >= 0) {
-    minutes = eepromMinutes;
-    previousMinutes = eepromMinutes;
-  }
+  seconds = min(59, max(0, seconds));
+  minutes = min(99, max(0, minutes));
+  previousSeconds = seconds;
+  previousMinutes = minutes;
 
   alarm5MinutesBleeps = min(9, max(0, alarm5MinutesBleeps));
   alarm10MinutesBleeps = min(9, max(0, alarm10MinutesBleeps));
   alarm15MinutesBleeps = min(9, max(0, alarm15MinutesBleeps));
   alarm20MinutesBleeps = min(9, max(0, alarm20MinutesBleeps));
 
-  EEPROM.get(tempOffsetAddress, tempOffset);
   tempOffset = fmin(9.9, fmax(-9.9, tempOffset));
 }
