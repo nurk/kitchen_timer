@@ -7,7 +7,7 @@ https://www.circuitbasics.com/arduino-thermistor-temperature-sensor-tutorial/
 const int NOMINAL_RESISTANCE = 10000;
 const int SERIAL_RESISTANCE = 10000;
 const int BETA_COEFFICIENT = 3435;
-const int ADC_RESOLUTION = 1024;
+const int ADC_RESOLUTION = 1023;
 const int TEMPERATURE_NOMINAL = 25;
 const int NUMBER_OF_TEMPERATURE_SAMPLES = 4;
 

@@ -48,8 +48,7 @@
 #define BATTERY_LEVEL_LED_PIN PIN_PD7
 
 #define TEMP_V PIN_PF4
-#define TEMP_GND PIN_PF1  // v6.3
-// #define TEMP_GND PIN_PF3  // v6.4
+#define TEMP_GND PIN_PF3
 #define FUNCTION PIN_PF5
 
 const int segments[] = { A_SEGMENT, B_SEGMENT, C_SEGMENT, D_SEGMENT, E_SEGMENT, F_SEGMENT, G_SEGMENT, DP_SEGMENT };
