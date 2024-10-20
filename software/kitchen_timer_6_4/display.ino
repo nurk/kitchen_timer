@@ -123,9 +123,9 @@ void multiplexDigits() {
   }
 }
 
-void writeDigit(byte number, boolean withDp) {
+void writeDigit(byte digit, boolean withDp) {
   for (int i = 0, mask = 1; i < 8; i++, mask = mask << 1) {
-    if (number & mask) {
+    if (digit & mask) {
       digitalWrite(segments[i], HIGH);
     } else {
       digitalWrite(segments[i], LOW);

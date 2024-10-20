@@ -4,12 +4,12 @@ void handleButtons() {
   minutesButton.read();
   secondsButton.read();
 
-  handleStarStoptButton();
+  handleStarStopButton();
   handleTimeResetButton();
   handleTimeButtons();
 }
 
-void handleStarStoptButton() {
+void handleStarStopButton() {
   if (startStopButton.wasPressed()) {
     buttonTone();
   }
