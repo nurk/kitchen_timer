@@ -5362,7 +5362,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 185.42) (xy 146.05 187.96)
+			(xy 146.05 186.69) (xy 146.05 187.96)
 		)
 		(stroke
 			(width 0)
@@ -6359,6 +6359,16 @@
 			(type default)
 		)
 		(uuid "8bd6b839-08ff-4a98-aba0-71102669070b")
+	)
+	(wire
+		(pts
+			(xy 146.05 179.07) (xy 146.05 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8c5ee172-4cc0-4b3c-aada-c04c92fe35a0")
 	)
 	(wire
 		(pts
@@ -9547,7 +9557,7 @@
 	)
 	(symbol
 		(lib_id "00_local:R")
-		(at 146.05 181.61 180)
+		(at 146.05 182.88 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9555,7 +9565,7 @@
 		(dnp no)
 		(uuid "44ef4b11-d3dd-4c8b-94fc-231f62c1267f")
 		(property "Reference" "R21"
-			(at 148.082 180.594 0)
+			(at 148.082 181.864 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9564,7 +9574,7 @@
 			)
 		)
 		(property "Value" "10k 1%"
-			(at 148.082 183.134 0)
+			(at 148.082 184.404 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9573,7 +9583,7 @@
 			)
 		)
 		(property "Footprint" "00_local:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 147.828 181.61 90)
+			(at 147.828 182.88 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9582,7 +9592,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 146.05 181.61 0)
+			(at 146.05 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9591,7 +9601,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 146.05 181.61 0)
+			(at 146.05 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
