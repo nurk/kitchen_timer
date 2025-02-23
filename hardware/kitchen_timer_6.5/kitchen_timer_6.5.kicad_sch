@@ -5910,16 +5910,6 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 187.96) (xy 130.81 190.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0550cdab-96e2-4f99-98c0-9453c60d5e67")
-	)
-	(wire
-		(pts
 			(xy 132.08 83.82) (xy 133.35 83.82)
 		)
 		(stroke
@@ -7748,7 +7738,7 @@
 		)
 		(uuid "3cb274d0-47f7-4267-be6e-40eed1c0fbb5")
 	)
-	(label "TEMP_GND"
+	(label "TEMP_VCC"
 		(at 115.57 102.87 180)
 		(effects
 			(font
@@ -8098,8 +8088,8 @@
 		)
 		(uuid "a36f6ca0-ef22-465a-a5fe-b7b97de4c2fc")
 	)
-	(label "TEMP_GND"
-		(at 130.81 190.5 0)
+	(label "TEMP_VCC"
+		(at 130.81 165.1 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10453,72 +10443,6 @@
 			(project "timer_v4.0"
 				(path "/913bc5dc-ca18-41a4-a86c-40ef688df58f"
 					(reference "SW4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "00_local:+5V")
-		(at 130.81 165.1 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "60b0edef-70b2-46aa-9e73-df9198887819")
-		(property "Reference" "#PWR024"
-			(at 130.81 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 130.81 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 130.81 165.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 130.81 165.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 130.81 165.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "6d10e3e8-bbc1-450d-a3df-f9be5c8a4b14")
-		)
-		(instances
-			(project "timer_v6.0"
-				(path "/913bc5dc-ca18-41a4-a86c-40ef688df58f"
-					(reference "#PWR024")
 					(unit 1)
 				)
 			)
@@ -14485,6 +14409,73 @@
 			(project "timer_v4.0"
 				(path "/913bc5dc-ca18-41a4-a86c-40ef688df58f"
 					(reference "SW2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "00_local:GND")
+		(at 130.81 187.96 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fd678f17-f755-4e5f-9ae8-4a3a43dc50c1")
+		(property "Reference" "#PWR032"
+			(at 130.81 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 130.81 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 130.81 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 130.81 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 130.81 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "dcf06b26-ba19-47a4-8c10-0cdabb26c966")
+		)
+		(instances
+			(project "kitchen_timer_6.5"
+				(path "/913bc5dc-ca18-41a4-a86c-40ef688df58f"
+					(reference "#PWR032")
 					(unit 1)
 				)
 			)
